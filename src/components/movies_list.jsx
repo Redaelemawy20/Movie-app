@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-
+import { apiCallBegin, moviesLoaded } from "../store/reducer";
 import url from "../config/urls";
 const MovieList = ({ history, load, movies }) => {
   useEffect(() => {
@@ -60,14 +60,13 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     load: (page) =>
-      dispatch({
-        type: "apiCallBegin",
-        payload: {
+      dispatch(
+        apiCallBegin({
           url: url.discover(page),
-          onSuccess: "moviesLoaded",
+          onSuccess: moviesLoaded,
           loading: "movies",
-        },
-      }),
+        })
+      ),
   };
 };
 

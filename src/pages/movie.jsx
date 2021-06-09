@@ -2,6 +2,10 @@ import React from "react";
 
 import SingleMovie from "../components/single_movie";
 const Movie = () => {
-  return <SingleMovie />;
+  return (
+    <div>
+      <SingleMovie />
+    </div>
+  );
 };
-export default SingleMovie;
+export default Movie;

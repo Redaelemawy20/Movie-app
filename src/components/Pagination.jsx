@@ -1,6 +1,7 @@
 import React from "react";
 import _ from "lodash";
 import { connect } from "react-redux";
+import { pageChanged } from "../store/reducer";
 const Pagination = ({ changePage, currentPage }) => {
   console.log();
   if (currentPage - 3 < 1)
@@ -49,7 +50,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    changePage: (page) => dispatch({ type: "pageChanged", payload: page }),
+    changePage: (page) => dispatch(pageChanged(page)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Pagination);

@@ -69,13 +69,17 @@ main {
 .movie {
   width: 300px;
   margin: 1rem;
-
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
   border-radius: 3px;
 }
-
+.poster {
+  height: 400px;
+}
+.poster img {
+  height: 100%;
+}
 .movie img {
   width: 100%;
 }
@@ -125,7 +129,7 @@ span.g {
   right: 0;
   max-height: 100%;
   transform: translateY(101%);
-  overflow-y: auto;
+  overflow-y: hidden;
   transition: transform 0.3s ease-in;
   max-height: 70%;
 }
